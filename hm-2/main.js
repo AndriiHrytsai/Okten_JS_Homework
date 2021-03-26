@@ -488,15 +488,15 @@ for (let i = 0; i < 10; i++) {
 console.log(arr_two);
 
 
-
 //створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому, і якщо об'єкт є числом,
 //  додати його в інший масив.
-let arr = [100,'hello',true, 168,'ok10',345,'andrii'];
+let arr = [100,'hello',true, 168,'ok10',345,'andrii', 122];
 let arr_two = [];
-for (let i = 0; i < arr.length-1; i++) {
+for (let i = 0; i < arr.length; i++) {
     if(typeof arr[i] === "number"){
-        arr_two.push(i);
+        arr_two.push(arr[i]);
     }
 }
 console.log(arr_two);
+
  */
