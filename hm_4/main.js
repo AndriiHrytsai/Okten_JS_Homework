@@ -223,8 +223,7 @@
 // let rez = numbersInput(arr1);
 // console.log(rez);
 
-//- Дано список імен.
-// Написати функцію, яка приймає будь яке не валідне імя, та нормалізує його в наступнйи вигляд
+//- Дано список імен. Написати функцію, яка приймає будь яке не валідне імя, та нормалізує його в наступнйи вигляд
 // let n1 = '    Harry      Potter      ';
 // let n2 = '    Ron       Whisley      ';
 // let n3 = '    Hermione       Granger      ';
@@ -239,3 +238,60 @@
 //     }
 // }
 
+//Створити функцію яка : Додає в боді блок з текстом "Hello owu"
+// function newBlocks (blocky){
+//     let newSpanElement = document.createElement("span");
+//     document.body.appendChild(newSpanElement);
+//     let blockText = newSpanElement.innerText = 'Hello owu';
+// }
+// newBlocks();
+
+// - Додає в боді елемент з текстом . Тип елементу та текст отримати через аргументи
+// function newBlocks (text = ' foisdfoD'){
+//     let newSpanElement = document.createElement("span");
+//     document.body.appendChild(newSpanElement);
+//     let blockText = newSpanElement.innerText = `${text}`;
+//     return text
+// }
+// let rez = newBlocks();
+// console.log(rez)
+
+// - приймає масив автомобілів (можна взяти з попередніх дз ),та
+// індентифікатор елемнту в який потрібно додати список цих автомобілів.
+// Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
+// Всі властивості авто в обному блоці
+// let car = ['Volvo' , 'Daewoo', 'Mercedes-Benz', 'BMW', 'Rover'];
+// function aboutCar (cars , id){
+//     for (let i = 0; i < cars.length; i++) {
+//         let newBlock = document.createElement('div');
+//         document.body.appendChild(newBlock);
+//         newBlock.id = id;
+//         let t = document.getElementById(id);
+//         let textArea = newBlock.innerText = `${car[i]}`;
+//     }
+//     return cars ;
+// }
+// aboutCar(car , 2);
+
+//приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
+// Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
+// Для кожної властивості створити всередені блока автомоблія свій блок
+
+// let aCar = [];
+//
+// function aboutCar(cars, id) {
+//     for (let i = 0; i < cars.length; i++) {
+//         let newBlock = document.createElement('div');
+//         document.body.appendChild(newBlock);
+//         newBlock.id = id;
+//         for (let infoCar in cars) {
+//             let newBlock2 = document.createElement('div');
+//             newBlock.appendChild(newBlock2);
+//         }
+//         let t = document.getElementById(id);
+//         let textArea = newBlock.innerText = `${cars[i]}`;
+//     }
+//     return cars;
+// }
+//
+// aboutCar([{mazda: {year: '2008', dtp: false}}, {BMW: {year: '2008', dtp: false, color: 'red'}}], 2);
