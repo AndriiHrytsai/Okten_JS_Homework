@@ -276,22 +276,63 @@
 //приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 // Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
 // Для кожної властивості створити всередені блока автомоблія свій блок
-
 // let aCar = [];
-//
 // function aboutCar(cars, id) {
 //     for (let i = 0; i < cars.length; i++) {
 //         let newBlock = document.createElement('div');
 //         document.body.appendChild(newBlock);
 //         newBlock.id = id;
-//         for (let infoCar in cars) {
+//         for (let infoCar in cars[i]) {
 //             let newBlock2 = document.createElement('div');
 //             newBlock.appendChild(newBlock2);
+//             newBlock2.innerText = `${infoCar}: ${cars[i][infoCar]}`;
 //         }
 //         let t = document.getElementById(id);
-//         let textArea = newBlock.innerText = `${cars[i]}`;
 //     }
 //     return cars;
 // }
+// aboutCar([{car: 'mazda' , year: '2008', dtp: false}, {car: 'Toyota LC200 ' , year: '2017', dtp: false, color: 'black'}], 2);
+//Точная степень двойки.  Дано натуральное число N.
+// Выведите слово YES, если число N является точной степенью двойки,
+// или слово NO в противном случае.
+// Операцией возведения в степень пользоваться нельзя!
+// let n = +prompt('Enter a num');
+// let i = 1;
+// while (n >= i) {
+//     if (i === n) {
+//         console.log('YES');
+//         break;
+//     } else {
+//         console.log('NO');
+//     }
+// }
+
+//Вирівняти багаторівневий масив в однорівневий
+// let arrCopy = [];
+// let str = 'string';
+// let arr = [1, 3, ['Hello', 'World', [9, 6, 1]], ['oops'], 9];
 //
-// aboutCar([{mazda: {year: '2008', dtp: false}}, {BMW: {year: '2008', dtp: false, color: 'red'}}], 2);
+// function allArrToOne(arry) {
+//     for (let i = 0; i < arry.length; i++) {
+//         if (arry[i].length > 0) {
+//             for (let j of arry[i]) {
+//                 if (typeof j !== str) {
+//                     for (let k of j) {
+//                         arrCopy.push(k);
+//                     }
+//                 } else {
+//                     arrCopy.push(j);
+//                 }
+//             }
+//
+//         } else {
+//             arrCopy.push(arry[i]);
+//         }
+//     }
+//     return arrCopy;
+// }
+// let result = allArrToOne(arr);
+// console.log(result);
+
+
+
