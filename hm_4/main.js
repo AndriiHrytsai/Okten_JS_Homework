@@ -20,39 +20,28 @@
 // arrArr(arr_2);
 
 //створити функцію яка приймає три числа та виводить найменьше. (Без Math.min!)
-// function min(a, b, c) {
-//     if (a <= b && a <= c) {
-//         return a;
-//     } else if (a >= c && b >= c) {
-//         return c;
-//     } else if (a >= b && b <= c) {
-//         return b;
-//     } else {
-//         return 0;
+// let minValue = (a = [5,3,8]) => {
+//     let min = a[0];
+//     for (let i = 0; i < a.length; i++) {
+//         if (a[i] < min){
+//             min = a[i];
+//         }
 //     }
+//     return min;
 // }
-// let num_1 = +prompt('Enter num');
-// let num_2 = +prompt('Enter num');
-// let num_3 = +prompt('Enter num');
-// console.log(min(num_1, num_2, num_3));
+// console.log(minValue());
 
 //створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!)
-// function max(a, b, c) {
-//     if (a > b && a > c) {
-//         return a;
-//     } else if (a < c && b < c) {
-//         return c;
-//     } else if (a < b && b > c) {
-//         return b;
-//     } else {
-//         return 0;
+// let minValue = (a = [5,3,8]) => {
+//     let max = a[0];
+//     for (let i = 0; i < a.length; i++) {
+//         if (a[i] > max){
+//             max = a[i];
+//         }
 //     }
+//     return max;
 // }
-// let num1 = +prompt('Enter num');
-// let num2 = +prompt('Enter num');
-// let num3 = +prompt('Enter num');
-// let maxValue = max(num1, num2, num3)
-// console.log(maxValue);
+// console.log(minValue());
 
 //Створити функцію яка повертає найбільше число з масиву
 // let maxValue = 0;
@@ -299,22 +288,21 @@
 // Выведите слово YES, если число N является точной степенью двойки,
 // или слово NO в противном случае.
 // Операцией возведения в степень пользоваться нельзя!
-// let n = +prompt('Enter a num');
-// let i = 1;
-// while (n >= i) {
-//     if (i === n) {
-//         console.log('YES');
-//         break;
-//     } else {
-//         console.log('NO');
-//     }
+//let twoInStepen = (number = +prompt("Enter a number")) => {
+//     do {
+//         if (number % 2 !== 0) {
+//             return "NO";
+//         }
+//         number /= 2;
+//     } while (number>=2)
+//     return "Yes";
 // }
+// console.log(twoInStepen());
 
 //Вирівняти багаторівневий масив в однорівневий
 // let arrCopy = [];
 // let str = 'string';
 // let arr = [1, 3, ['Hello', 'World', [9, 6, 1]], ['oops'], 9];
-//
 // function allArrToOne(arry) {
 //     for (let i = 0; i < arry.length; i++) {
 //         if (arry[i].length > 0) {
@@ -327,7 +315,6 @@
 //                     arrCopy.push(j);
 //                 }
 //             }
-//
 //         } else {
 //             arrCopy.push(arry[i]);
 //         }
@@ -337,5 +324,38 @@
 // let result = allArrToOne(arr);
 // console.log(result);
 
+//Разложить число по разрядам и вывести в таком виде:
+// 300000 + 20000 + 1000 + 500 + 80 + 7 = 321587
+//**************************************** ХИТРЕ РІШЕННЯ ***********************************
+// let rez = (number) => {
+//     let arrPushing = [];
+//     let str = number.toString().split('');
+//     let arrDec = [1];
+//     for (let i = 0; i < 15; i++) {
+//         arrDec.push(arrDec[i] * 10);
+//     }
+//     for (let j = str.reverse().length - 1; j >= 0; j--) {
+//         for (let k = 0; k < arrDec.length; k++) {
+//             if (j === k) {
+//                 arrPushing.push(str[j] * arrDec[k]);
+//             }
+//         }
+//     }
+//     return arrPushing.join(' + ');
+// }
+// console.log(rez(354));
+//**************************************** ІНШИЙ ВАРІАНТ ***************************************
+// let numbers = (num) => {
+//     let numToString = num.toString();
+//     let emptyArr = [];
+//     for (let i = 0; i < numToString.length; i++) {
+//         emptyArr.push(numToString[i]);
+//         for (j = emptyArr.length -2; j>=0; j-- ) {
+//             emptyArr[j] = emptyArr[j] + 0;
+//         }
+//     }
+//     return emptyArr.join(' + ');
+// }
+// console.log(numbers(+prompt('Enter a number')));
 
 
