@@ -329,10 +329,11 @@
 // -- функція повинна приймати масив попелюшок, та шукає ту котра йому підходить
 //
 // function Darling(name, age, legSize) {
-//         this.name = name;
-//         this.age = age;
-//         this.legSize = legSize;
+//     this.name = name;
+//     this.age = age;
+//     this.legSize = legSize;
 // }
+//
 // let darlingArray = [];
 //
 // let darlingOne = new Darling('Viktoria', 20, 38);
@@ -367,18 +368,19 @@
 //
 //
 // function Prince(name, age, legSize) {
-//         this.name = name;
-//         this.age = age;
-//         this.legSize = legSize;
-//     }
-//
-// let prince = new Prince('Andriy', 20, 38);
-// for (let arr of darlingArray) {
-//     if (arr.legSize === prince.legSize) {
-//         console.log(arr);
+//     this.name = name;
+//     this.age = age;
+//     this.legSize = legSize;
+//     this.searchLover = function (darlingArray) {
+//         for (let arr of darlingArray) {
+//             if (arr.legSize === prince.legSize) {
+//                 console.log(arr);
+//             }
+//         }
 //     }
 // }
-
+// let prince = new Prince('Andriy', 20, 38);
+// prince.searchLover(darlingArray);
 
 
 
