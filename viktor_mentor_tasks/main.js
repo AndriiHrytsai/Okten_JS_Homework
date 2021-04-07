@@ -141,3 +141,25 @@
 // user.playGame();
 // user.pcAbout();
 
+//Палиндром
+// Дано слово, состоящее только из строчных латинских букв. Проверьте, является ли это слово палиндромом. Выведите YES или NO.
+// При решении этой задачи нельзя пользоваться циклами, в решениях на питоне нельзя использовать срезы с шагом, отличным от 1.
+//
+// let str = 'Alla';
+// let str_two = 'Andrii'
+// str = str.toLowerCase();
+// let polindrom = string => {
+//     let x = string.split("").reverse().join("");
+//     if (x === str) {
+//         console.log('YES')
+//     } else {
+//         console.log('no');
+//     }
+//     return x;
+// }
+// console.log(polindrom(str));
+// console.log(polindrom(str_two));
+
+
+
+
