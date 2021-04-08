@@ -106,11 +106,14 @@ str.forEach(value => {
 // console.log(usersId)
 //
 // //Всі хто одружений мають попасти у новий масив та отрмати квартиру (reduce)
-//
-// // let x = users.reduce((previous, currentValue) => {
-//  if (p)
-//  });
-// // console.log(x)  не знаю
+// let  peopleHouse= users.reduce((arry, exp) => {
+//     if(exp.isMarried){
+//         exp.house = true;
+//         arry.push(exp);
+//     }
+//     return arry;
+// },[] )
+// console.log(peopleHouse);
 
 
 //************************************************ Для аудиторії **********************************************
@@ -265,3 +268,88 @@ console.log(powerNameTwo);
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25,
 // то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
 // Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+
+class Car {
+    constructor(name, power, owner, price, year) {
+        this.name = name;
+        this.power = power;
+        this.owner = owner;
+        this.price = price;
+        this.year = year;
+    }
+}
+
+class Driver {
+    constructor(name, age, driveYear) {
+        this.name = name;
+        this.age = age;
+        this.driveYear = driveYear;
+    }
+}
+
+let driverOne = new Driver('Andriy', 20, 2);
+let driverTwo = new Driver('Ostap', 27, 3);
+let driverThree = new Driver('Vovan', 36, 15);
+let driverFour = new Driver('Ivan', 19, 2);
+let driverFive = new Driver('Oleg', 20, 1);
+let driverSix = new Driver('Yuriy', 26, 1);
+let driverSeven = new Driver('Slavic', 30, 1);
+
+let newDriver = {name: 'Stepan', age: 40, driveYear: 5};
+
+
+let allCars = [];
+
+let carOne = new Car('bmw', 2000, driverOne, 7700, 2004);
+allCars.push(carOne);
+let carTwo = new Car('daewoo', 1500, driverTwo, 3300, 2001);
+allCars.push(carTwo);
+let carThree = new Car('mercedes', 2200, driverThree, 4200, 1993);
+allCars.push(carThree);
+let carFour = new Car('rover', 2900, driverFour, 4500, 2005);
+allCars.push(carFour);
+let carFive = new Car('subaru', 3000, driverFive, 7900, 2002);
+allCars.push(carFive);
+let carSix = new Car('chevrolet', 1800, driverSix, 12000, 2021);
+allCars.push(carSix);
+let carSeven = new Car('suzuki', 2500, driverSeven, 9000, 2009);
+allCars.push(carSeven);
+
+
+let repair = allCars.map((value, index) => {
+        if (!(index % 2)) {
+            value.repair = true;
+            value.power += value.power * 0.1;
+            value.owner = newDriver;
+        } else {
+            value.repair = false;
+        }
+        return value;
+    }
+)
+console.table(repair);
+
+allCars.forEach((value, index) => {
+    if (!(index % 2)) {
+        value.power += value.power * 0.1;
+        value.price += value.price * 0.05;
+    }
+})
+console.table(allCars);
+
+allCars.filter(value => {
+    if (value.owner.driveYear < 5 && value.owner.age > 25) {
+        console.log(`${value.owner.name} рекомендую вам піти на курси і збільшити свій досвід до ${value.owner.driveYear + 1}`);
+        value.owner.driveYear += 1;
+    }
+})
+console.table(allCars);
+
+let allAutoSum = allCars.reduce((previousValue, currentValue) => {
+    return previousValue + currentValue.price;
+}, 0);
+console.log(`Сума всіх авто становить ${allAutoSum}$`);
+
+
+
+
