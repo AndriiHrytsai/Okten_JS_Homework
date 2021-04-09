@@ -58,7 +58,6 @@ str.forEach(value => {
 });
  */
 
-
 // //3) Все робити тільки за допомогою методів масивів!
 // // Дано масив :
 // const users = [
@@ -268,88 +267,134 @@ console.log(powerNameTwo);
 // Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25,
 // то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
 // Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+//
+// class Car {
+//     constructor(name, power, owner, price, year) {
+//         this.name = name;
+//         this.power = power;
+//         this.owner = owner;
+//         this.price = price;
+//         this.year = year;
+//     }
+// }
+//
+// class Driver {
+//     constructor(name, age, driveYear) {
+//         this.name = name;
+//         this.age = age;
+//         this.driveYear = driveYear;
+//     }
+// }
+//
+// let driverOne = new Driver('Andriy', 20, 2);
+// let driverTwo = new Driver('Ostap', 27, 3);
+// let driverThree = new Driver('Vovan', 36, 15);
+// let driverFour = new Driver('Ivan', 19, 2);
+// let driverFive = new Driver('Oleg', 20, 1);
+// let driverSix = new Driver('Yuriy', 26, 1);
+// let driverSeven = new Driver('Slavic', 30, 1);
+//
+// let newDriver = {name: 'Stepan', age: 40, driveYear: 5};
+//
+//
+// let allCars = [];
+//
+// let carOne = new Car('bmw', 2000, driverOne, 7700, 2004);
+// allCars.push(carOne);
+// let carTwo = new Car('daewoo', 1500, driverTwo, 3300, 2001);
+// allCars.push(carTwo);
+// let carThree = new Car('mercedes', 2200, driverThree, 4200, 1993);
+// allCars.push(carThree);
+// let carFour = new Car('rover', 2900, driverFour, 4500, 2005);
+// allCars.push(carFour);
+// let carFive = new Car('subaru', 3000, driverFive, 7900, 2002);
+// allCars.push(carFive);
+// let carSix = new Car('chevrolet', 1800, driverSix, 12000, 2021);
+// allCars.push(carSix);
+// let carSeven = new Car('suzuki', 2500, driverSeven, 9000, 2009);
+// allCars.push(carSeven);
+//
+//
+// let repair = allCars.map((value, index) => {
+//         if (!(index % 2)) {
+//             value.repair = true;
+//             value.power += value.power * 0.1;
+//             value.owner = newDriver;
+//         } else {
+//             value.repair = false;
+//         }
+//         return value;
+//     }
+// )
+// console.table(repair);
+//
+// allCars.forEach((value, index) => {
+//     if (!(index % 2)) {
+//         value.power += value.power * 0.1;
+//         value.price += value.price * 0.05;
+//     }
+// })
+// console.table(allCars);
+//
+// allCars.filter(value => {
+//     if (value.owner.driveYear < 5 && value.owner.age > 25) {
+//         console.log(`${value.owner.name} рекомендую вам піти на курси і збільшити свій досвід до ${value.owner.driveYear + 1}`);
+//         value.owner.driveYear += 1;
+//     }
+// })
+// console.table(allCars);
+//
+// let allAutoSum = allCars.reduce((previousValue, currentValue) => {
+//     return previousValue + currentValue.price;
+// }, 0);
+// console.log(`Сума всіх авто становить ${allAutoSum}$`);
 
-class Car {
-    constructor(name, power, owner, price, year) {
-        this.name = name;
-        this.power = power;
-        this.owner = owner;
-        this.price = price;
-        this.year = year;
+// Задача: дан отсортированный по возрастанию массив целых чисел.
+//     Необходимо вернуть наименьший и наибольший индекс заданного элемента.
+//     Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
+//     Вывод: наибольший и наименьший индекс в массиве заданного элемента. Если такого элемента нет в массиве, выведите -1.
+
+//********************************* Як варіант може бути ********************************************************
+
+// let arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14];
+// let x = +prompt("Enter num");
+// for (let i = 0; i < arr.length; i++) {
+//     if (x === arr[i]) {
+//         console.log(`MinIndex ${i}`)
+//         break;
+//     }
+// }
+//     for (let j = arr.length -1; j >=0; j--) {
+//         if (x === arr[j]) {
+//             console.log(`MaxIndex ${j}`);
+//             break;
+//         }
+//     }
+
+//********************************* Дуже тупо але працює (xDDDD) ******************************************************
+
+// let arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14];
+// let x = +prompt("Enter num");
+// let arryIndex = [];
+// arr.filter((value, index) => {
+//     if(x===value){
+//         arryIndex.push(index);
+//     }
+// });
+// let y = arryIndex.length;
+// console.log(`Min index ${arryIndex[0]}  and Max Index ${arryIndex[y-1]}`);
+
+// ********************************** найменш затратний варіант *********************************************
+
+let numbers = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14];
+let minMaxIndex = (arr, num) => {
+    const min = arr.indexOf(num);
+    if (min === -1) {
+        return -1;
     }
+    const max = arr.lastIndexOf(num);
+    return {min, max}
 }
-
-class Driver {
-    constructor(name, age, driveYear) {
-        this.name = name;
-        this.age = age;
-        this.driveYear = driveYear;
-    }
-}
-
-let driverOne = new Driver('Andriy', 20, 2);
-let driverTwo = new Driver('Ostap', 27, 3);
-let driverThree = new Driver('Vovan', 36, 15);
-let driverFour = new Driver('Ivan', 19, 2);
-let driverFive = new Driver('Oleg', 20, 1);
-let driverSix = new Driver('Yuriy', 26, 1);
-let driverSeven = new Driver('Slavic', 30, 1);
-
-let newDriver = {name: 'Stepan', age: 40, driveYear: 5};
-
-
-let allCars = [];
-
-let carOne = new Car('bmw', 2000, driverOne, 7700, 2004);
-allCars.push(carOne);
-let carTwo = new Car('daewoo', 1500, driverTwo, 3300, 2001);
-allCars.push(carTwo);
-let carThree = new Car('mercedes', 2200, driverThree, 4200, 1993);
-allCars.push(carThree);
-let carFour = new Car('rover', 2900, driverFour, 4500, 2005);
-allCars.push(carFour);
-let carFive = new Car('subaru', 3000, driverFive, 7900, 2002);
-allCars.push(carFive);
-let carSix = new Car('chevrolet', 1800, driverSix, 12000, 2021);
-allCars.push(carSix);
-let carSeven = new Car('suzuki', 2500, driverSeven, 9000, 2009);
-allCars.push(carSeven);
-
-
-let repair = allCars.map((value, index) => {
-        if (!(index % 2)) {
-            value.repair = true;
-            value.power += value.power * 0.1;
-            value.owner = newDriver;
-        } else {
-            value.repair = false;
-        }
-        return value;
-    }
-)
-console.table(repair);
-
-allCars.forEach((value, index) => {
-    if (!(index % 2)) {
-        value.power += value.power * 0.1;
-        value.price += value.price * 0.05;
-    }
-})
-console.table(allCars);
-
-allCars.filter(value => {
-    if (value.owner.driveYear < 5 && value.owner.age > 25) {
-        console.log(`${value.owner.name} рекомендую вам піти на курси і збільшити свій досвід до ${value.owner.driveYear + 1}`);
-        value.owner.driveYear += 1;
-    }
-})
-console.table(allCars);
-
-let allAutoSum = allCars.reduce((previousValue, currentValue) => {
-    return previousValue + currentValue.price;
-}, 0);
-console.log(`Сума всіх авто становить ${allAutoSum}$`);
-
-
+console.log(minMaxIndex(numbers, 4));
 
 
