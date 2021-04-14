@@ -160,3 +160,26 @@
 // }
 // polindrom(str);
 // polindrom(str_two);
+
+//Знайти набільший елемент в масиві за допомогою reduce
+// let arr = [1,6,9,0,17,88,4,7] ;
+// let maxValue = arr.reduce((previousValue, currentValue) => {
+//     if(previousValue < currentValue){
+//         return currentValue
+//     }
+//     return  previousValue;
+// });
+// console.log(maxValue);
+
+//Знайти анаграму.
+// Перевірити чи слово має в собі такі самі літери як і поеперднє слово.
+// EXIT | AXET -> false
+// GOOD | DOGO -> true
+//
+// function anagram(firstWord, secondWord){
+//     let result = firstWord.split("").sort().join("") === secondWord.split("").sort().join("");
+//     console.log(result);
+//     return result;
+// }
+// anagram('exit' , 'tixe');
+

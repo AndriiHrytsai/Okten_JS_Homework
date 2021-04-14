@@ -288,16 +288,16 @@
 // Выведите слово YES, если число N является точной степенью двойки,
 // или слово NO в противном случае.
 // Операцией возведения в степень пользоваться нельзя!
-//let twoInStepen = (number = +prompt("Enter a number")) => {
-//     do {
-//         if (number % 2 !== 0) {
-//             return "NO";
-//         }
-//         number /= 2;
-//     } while (number>=2)
-//     return "Yes";
-// }
-// console.log(twoInStepen());
+let twoInStepen = (number = +prompt("Enter a number")) => {
+    do {
+        if (number % 2 !== 0) {
+            return "NO";
+        }
+        number /= 2;
+    } while (number>=2)
+    return "Yes";
+}
+console.log(twoInStepen());
 
 //Вирівняти багаторівневий масив в однорівневий
 // let arrCopy = [];
