@@ -67,31 +67,30 @@
 let areaThree = document.getElementById('areaThree');
 let continueButton = document.getElementById('continue');
 let arr = [];
-
+let wrapper = 0;
 continueButton.onclick = () => {
     arr.push(areaThree.value);
     localStorage.setItem('text', JSON.stringify(arr));
+    wrapper++;
 }
-let parserText = JSON.parse(localStorage.getItem('text'));
-// for (let parserTextElement of parserText) {
-//     console.log(parserTextElement);
-// }
 let minus = document.getElementById('minus');
-let a = 1;
 minus.onclick = () => {
-    areaThree.value = parserText[parserText.length - a];
-    if (a === parserText.length) {
-        return 0;
+    let parserText = JSON.parse(localStorage.getItem('text'));
+    if (wrapper - 1 >= 0) {
+        wrapper--;
+    } else {
+        wrapper = parserText.length - 1;
     }
-    a++
-}
-let plus = document.getElementById('plus');
-let y = parserText.length - a;
-plus.onclick = () => {
-    areaThree.value = parserText[y - 1]
-    if (y === parserText.length) {
-        return 0;
-    }
-    y++;
+    areaThree.value = parserText[wrapper];
 }
 
+let plus = document.getElementById('plus');
+plus.onclick = () => {
+    let parserText = JSON.parse(localStorage.getItem('text'));
+    if (wrapper + 1 < parserText.length) {
+        wrapper++;
+    } else {
+        wrapper = 0;
+    }
+    areaThree.value = parserText[wrapper];
+}
