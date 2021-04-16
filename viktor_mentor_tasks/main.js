@@ -183,3 +183,14 @@
 // }
 // anagram('exit' , 'tixe');
 
+// сделай функцию калькулятор которая будет принимить числа а и б и колбек
+//  в зависимости какой колбек то такое и действие
+//
+//function calculator(a, b, cb) {
+//    cb(a, b)
+//}
+//
+//calculator(4, 6, function (left, right) {
+//   console.log(left + right);
+//});
+
