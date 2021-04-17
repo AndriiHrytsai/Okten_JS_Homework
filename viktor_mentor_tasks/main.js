@@ -194,3 +194,8 @@
 //   console.log(left + right);
 //});
 
+//Напиши функцію flatten() для сплющування вкладених масивів.
+// let arr = [3, 5, [7], [1, [[22]], [[6], 3]]];
+// let flatten = (arry) =>  arry = arry.flat(Number.MAX_VALUE);
+// console.log(flatten(arr));
+
