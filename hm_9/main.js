@@ -2,11 +2,11 @@
 
 // function wakeUp(time, cb) {
 //     setTimeout(() => {
-//         if (time === 8) {
+//         if (time >= 7 && time <= 8) {
 //             console.log('Good morning');
-//             cb(null, 8);
+//             cb(null, time);
 //         } else {
-//             cb('Ohh... my friend wake up please');
+//             cb('як казав мій друг - "вихідний" ');
 //         }
 //     }, 300)
 // }
