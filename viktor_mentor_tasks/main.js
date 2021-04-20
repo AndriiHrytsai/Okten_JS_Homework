@@ -233,198 +233,214 @@
 // - пошел на работу потратил енергию
 // и так придумать пунктов 10
 // на каждом шаге если энергия дошла до 0 то вывести сообщение к примеру "Вы умерли по пути на работу"
+//
+//
+// let energ = 1000;
+//
+// function wakeUp(energy, cb) {
+//     setTimeout(() => {
+//         if (energy > 0) {
+//             console.log('Ти прокинувся і у тебе ');
+//             energy -= 100;
+//             cb(null, energy);
+//         } else {
+//             cb('помер');
+//         }
+//     }, 300)
+// }
+//
+//
+// function brushTeeth(energy, cb) {
+//     setTimeout(() => {
+//         if (energy > 0) {
+//             console.log('Ти почистив зуби  і у тебе залишилось');
+//             energy -= 100;
+//             cb(null, energy);
+//         } else {
+//             cb('помер');
+//         }
+//     }, 300)
+// }
+//
+// function cupOfTea(energy, cb) {
+//     setTimeout(() => {
+//         if (energy > 0) {
+//             console.log('Випив чаю та енергії стало ');
+//             energy -= 50;
+//             cb(null, energy);
+//         } else {
+//             cb('помер')
+//         }
+//     }, 800)
+// }
+//
+// function goStudy(energy, cb) {
+//     setTimeout(() => {
+//         if (energy > 0) {
+//             console.log('Сідаю вчитись ');
+//             energy -= 400;
+//             cb(null, energy);
+//         } else {
+//             cb('Нема анергії, помер!!!')
+//         }
+//     }, 500)
+// }
+//
+// function pererva(energy, cb) {
+//     setTimeout(() => {
+//         if (energy > 0) {
+//             console.log('відпочинок і у тебе ');
+//             energy += 100;
+//             cb(null, energy);
+//         } else {
+//             cb('Нема анергії, помер!!!')
+//         }
+//     }, 500)
+// }
+//
+// function walk(energy, cb) {
+//     setTimeout(() => {
+//         if (energy > 0) {
+//             console.log('Піду трішки пройдусь');
+//             energy -= 300;
+//             cb(null, energy);
+//         } else {
+//             cb('мертвий ')
+//         }
+//     }, 200)
+// }
+//
+// function eat(energy, cb) {
+//     setTimeout(() => {
+//         if (energy > 0) {
+//             console.log('Смачного');
+//             energy += 150;
+//             cb(null, energy);
+//         } else {
+//             cb('такого більше немає ! помер')
+//         }
+//     }, 700)
+// }
+//
+// function watchFilm(energy, cb) {
+//     setTimeout(() => {
+//         if (energy > 0) {
+//             console.log(' Подивлюсь собі Форсаж');
+//             energy -= 10;
+//             cb(null, energy);
+//         } else {
+//             cb(' помер ')
+//         }
+//     }, 700)
+// }
+//
+// function gameWithGirl(energy, cb) {
+//     setTimeout(() => {
+//         if (energy > 0) {
+//             console.log('18+ !!!!');
+//             energy -= 200;
+//             cb(null, energy);
+//         } else {
+//             cb('Помер трагічно')
+//         }
+//     }, 700)
+// }
+//
+// function sleep(energy, cb) {
+//     setTimeout(() => {
+//         if (energy > 0) {
+//             cb(null, 'Пора спати ');
+//         } else {
+//             cb('помер під час с***у');
+//         }
+//     }, 600)
+// }
+//
+//
+// wakeUp(energ, ((err, energa) => {
+//     if (!err) {
+//         console.log(energa);
+//         brushTeeth(energa, ((err, enrgi) => {
+//             if (!err) {
+//                 console.log(enrgi);
+//                 cupOfTea(enrgi, (err, enrgi) => {
+//                     if (!err) {
+//                         console.log(enrgi);
+//                         goStudy(enrgi, (err, enrgi) => {
+//                             if (!err) {
+//                                 console.log(enrgi);
+//                                 pererva(enrgi, (err, enrgi) => {
+//                                     if (!err) {
+//                                         console.log(enrgi);
+//                                         walk(enrgi, (err, enrgi) => {
+//                                             if (!err) {
+//                                                 console.log(enrgi);
+//                                                 eat(enrgi, ((err, enrgi) => {
+//                                                     if (!err) {
+//                                                         console.log(enrgi);
+//                                                         watchFilm(enrgi, ((err, enrgi) => {
+//                                                             if (!err) {
+//                                                                 console.log(enrgi);
+//                                                                 gameWithGirl(enrgi, ((err, enrgi) => {
+//                                                                     if (!err) {
+//                                                                         console.log(enrgi);
+//                                                                         sleep(enrgi, ((err, enrgi) => {
+//                                                                             if (!err) {
+//                                                                                 console.log(enrgi);
+//                                                                             } else {
+//                                                                                 console.warn(err);
+//                                                                             }
+//                                                                         }))
+//                                                                     } else {
+//                                                                         console.warn(err);
+//                                                                     }
+//                                                                 }))
+//                                                             } else {
+//                                                                 console.warn(err);
+//                                                             }
+//                                                         }))
+//                                                     } else {
+//                                                         console.warn(err);
+//                                                     }
+//                                                 }))
+//                                             } else {
+//                                                 console.warn(err);
+//                                             }
+//                                         })
+//                                     } else {
+//                                         console.warn(err);
+//                                     }
+//                                 })
+//                             } else {
+//                                 console.warn(err)
+//                             }
+//                         })
+//                     } else {
+//                         console.warn(err);
+//                     }
+//                 })
+//             } else {
+//                 console.warn(err);
+//             }
+//         }));
+//     } else {
+//         console.warn(err);
+//
+//     }
+// }))
 
 
-let energ = 1000;
+//Отримати масив лише унікальних значень за допомогою reduce
+// [1, 9, 0, 1, 5, 9, 1, 6] -> [1, 9, 0, 5, 6]
+let arr = [1, 9, 0, 1, 5, 9, 1, 6];
 
-function wakeUp(energy, cb) {
-    setTimeout(() => {
-        if (energy > 0) {
-            console.log('Ти прокинувся і у тебе ');
-            energy -= 100;
-            cb(null, energy);
-        } else {
-            cb('помер');
-        }
-    }, 300)
-}
-
-
-function brushTeeth(energy, cb) {
-    setTimeout(() => {
-        if (energy > 0) {
-            console.log('Ти почистив зуби  і у тебе залишилось');
-            energy -= 100;
-            cb(null, energy);
-        } else {
-            cb('помер');
-        }
-    }, 300)
-}
-
-function cupOfTea(energy, cb) {
-    setTimeout(() => {
-        if (energy > 0) {
-            console.log('Випив чаю та енергії стало ');
-            energy -= 50;
-            cb(null, energy);
-        } else {
-            cb('помер')
-        }
-    }, 800)
-}
-
-function goStudy(energy, cb) {
-    setTimeout(() => {
-        if (energy > 0) {
-            console.log('Сідаю вчитись ');
-            energy -= 400;
-            cb(null, energy);
-        } else {
-            cb('Нема анергії, помер!!!')
-        }
-    }, 500)
-}
-
-function pererva(energy, cb) {
-    setTimeout(() => {
-        if (energy > 0) {
-            console.log('відпочинок і у тебе ');
-            energy += 100;
-            cb(null, energy);
-        } else {
-            cb('Нема анергії, помер!!!')
-        }
-    }, 500)
-}
-
-function walk(energy, cb) {
-    setTimeout(() => {
-        if (energy > 0) {
-            console.log('Піду трішки пройдусь');
-            energy -= 300;
-            cb(null, energy);
-        } else {
-            cb('мертвий ')
-        }
-    }, 200)
-}
-
-function eat(energy, cb) {
-    setTimeout(() => {
-        if (energy > 0) {
-            console.log('Смачного');
-            energy += 150;
-            cb(null, energy);
-        } else {
-            cb('такого більше немає ! помер')
-        }
-    }, 700)
-}
-
-function watchFilm(energy, cb) {
-    setTimeout(() => {
-        if (energy > 0) {
-            console.log(' Подивлюсь собі Форсаж');
-            energy -= 10;
-            cb(null, energy);
-        } else {
-            cb(' помер ')
-        }
-    }, 700)
-}
-
-function gameWithGirl(energy, cb) {
-    setTimeout(() => {
-        if (energy > 0) {
-            console.log('18+ !!!!');
-            energy -= 200;
-            cb(null, energy);
-        } else {
-            cb('Помер трагічно')
-        }
-    }, 700)
-}
-
-function sleep(energy, cb) {
-    setTimeout(() => {
-        if (energy > 0) {
-            cb(null, 'Пора спати ');
-        } else {
-            cb('помер під час с***у');
-        }
-    }, 600)
-}
-
-
-wakeUp(energ, ((err, energa) => {
-    if (!err) {
-        console.log(energa);
-        brushTeeth(energa, ((err, enrgi) => {
-            if (!err) {
-                console.log(enrgi);
-                cupOfTea(enrgi, (err, enrgi) => {
-                    if (!err) {
-                        console.log(enrgi);
-                        goStudy(enrgi, (err, enrgi) => {
-                            if (!err) {
-                                console.log(enrgi);
-                                pererva(enrgi, (err, enrgi) => {
-                                    if (!err) {
-                                        console.log(enrgi);
-                                        walk(enrgi, (err, enrgi) => {
-                                            if (!err) {
-                                                console.log(enrgi);
-                                                eat(enrgi, ((err, enrgi) => {
-                                                    if (!err) {
-                                                        console.log(enrgi);
-                                                        watchFilm(enrgi, ((err, enrgi) => {
-                                                            if (!err) {
-                                                                console.log(enrgi);
-                                                                gameWithGirl(enrgi, ((err, enrgi) => {
-                                                                    if (!err) {
-                                                                        console.log(enrgi);
-                                                                        sleep(enrgi, ((err, enrgi) => {
-                                                                            if (!err) {
-                                                                                console.log(enrgi);
-                                                                            } else {
-                                                                                console.warn(err);
-                                                                            }
-                                                                        }))
-                                                                    } else {
-                                                                        console.warn(err);
-                                                                    }
-                                                                }))
-                                                            } else {
-                                                                console.warn(err);
-                                                            }
-                                                        }))
-                                                    } else {
-                                                        console.warn(err);
-                                                    }
-                                                }))
-                                            } else {
-                                                console.warn(err);
-                                            }
-                                        })
-                                    } else {
-                                        console.warn(err);
-                                    }
-                                })
-                            } else {
-                                console.warn(err)
-                            }
-                        })
-                    } else {
-                        console.warn(err);
-                    }
-                })
-            } else {
-                console.warn(err);
-            }
-        }));
-    } else {
-        console.warn(err);
-
+let unic = arr.reduce((previousValue, currentValue) => {
+    if (!previousValue.includes(currentValue)) {
+        previousValue.push(currentValue)
     }
-}))
+    return previousValue;
+}, [])
+console.log(unic)
+
+
+
