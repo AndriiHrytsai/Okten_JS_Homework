@@ -211,17 +211,220 @@
 // l (затримка 0.3)
 // l (затримка 0.7)
 // о (затримка 1)
+//
+// let arr = 'hello';
+// arr = arr.split('');
+//
+// function machine(arry) {
+//     for (let i = 0; i < arry.length; i++) {
+//         setTimeout(function () {
+//             console.log(arry[i]);
+//         }, Math.random() * (1000 - 100))
+//     }
+// }
+//
+// machine(arr);
 
-let arr = 'hello';
-arr = arr.split('');
+//задание на асинхронность... подобно тому же заданию что и было на домашку....
+// задание называется "остаться в живых"
+// на начало дня у человека есть определенное количество энергии, пускай 1000
+// - человек проснулся потратил определенное количество энергии
+// - поел получил дополнительную энергию
+// - пошел на работу потратил енергию
+// и так придумать пунктов 10
+// на каждом шаге если энергия дошла до 0 то вывести сообщение к примеру "Вы умерли по пути на работу"
 
-function machine(arry) {
-    for (let i = 0; i < arry.length; i++) {
-        setTimeout(function () {
-            console.log(arry[i]);
-        }, Math.random() * (1000 - 100))
-    }
+
+let energ = 1000;
+
+function wakeUp(energy, cb) {
+    setTimeout(() => {
+        if (energy > 0) {
+            console.log('Ти прокинувся і у тебе ');
+            energy -= 100;
+            cb(null, energy);
+        } else {
+            cb('помер');
+        }
+    }, 300)
 }
 
-machine(arr);
 
+function brushTeeth(energy, cb) {
+    setTimeout(() => {
+        if (energy > 0) {
+            console.log('Ти почистив зуби  і у тебе залишилось');
+            energy -= 100;
+            cb(null, energy);
+        } else {
+            cb('помер');
+        }
+    }, 300)
+}
+
+function cupOfTea(energy, cb) {
+    setTimeout(() => {
+        if (energy > 0) {
+            console.log('Випив чаю та енергії стало ');
+            energy -= 50;
+            cb(null, energy);
+        } else {
+            cb('помер')
+        }
+    }, 800)
+}
+
+function goStudy(energy, cb) {
+    setTimeout(() => {
+        if (energy > 0) {
+            console.log('Сідаю вчитись ');
+            energy -= 400;
+            cb(null, energy);
+        } else {
+            cb('Нема анергії, помер!!!')
+        }
+    }, 500)
+}
+
+function pererva(energy, cb) {
+    setTimeout(() => {
+        if (energy > 0) {
+            console.log('відпочинок і у тебе ');
+            energy += 100;
+            cb(null, energy);
+        } else {
+            cb('Нема анергії, помер!!!')
+        }
+    }, 500)
+}
+
+function walk(energy, cb) {
+    setTimeout(() => {
+        if (energy > 0) {
+            console.log('Піду трішки пройдусь');
+            energy -= 300;
+            cb(null, energy);
+        } else {
+            cb('мертвий ')
+        }
+    }, 200)
+}
+
+function eat(energy, cb) {
+    setTimeout(() => {
+        if (energy > 0) {
+            console.log('Смачного');
+            energy += 150;
+            cb(null, energy);
+        } else {
+            cb('такого більше немає ! помер')
+        }
+    }, 700)
+}
+
+function watchFilm(energy, cb) {
+    setTimeout(() => {
+        if (energy > 0) {
+            console.log(' Подивлюсь собі Форсаж');
+            energy -= 10;
+            cb(null, energy);
+        } else {
+            cb(' помер ')
+        }
+    }, 700)
+}
+
+function gameWithGirl(energy, cb) {
+    setTimeout(() => {
+        if (energy > 0) {
+            console.log('18+ !!!!');
+            energy -= 200;
+            cb(null, energy);
+        } else {
+            cb('Помер трагічно')
+        }
+    }, 700)
+}
+
+function sleep(energy, cb) {
+    setTimeout(() => {
+        if (energy > 0) {
+            cb(null, 'Пора спати ');
+        } else {
+            cb('помер під час с***у');
+        }
+    }, 600)
+}
+
+
+wakeUp(energ, ((err, energa) => {
+    if (!err) {
+        console.log(energa);
+        brushTeeth(energa, ((err, enrgi) => {
+            if (!err) {
+                console.log(enrgi);
+                cupOfTea(enrgi, (err, enrgi) => {
+                    if (!err) {
+                        console.log(enrgi);
+                        goStudy(enrgi, (err, enrgi) => {
+                            if (!err) {
+                                console.log(enrgi);
+                                pererva(enrgi, (err, enrgi) => {
+                                    if (!err) {
+                                        console.log(enrgi);
+                                        walk(enrgi, (err, enrgi) => {
+                                            if (!err) {
+                                                console.log(enrgi);
+                                                eat(enrgi, ((err, enrgi) => {
+                                                    if (!err) {
+                                                        console.log(enrgi);
+                                                        watchFilm(enrgi, ((err, enrgi) => {
+                                                            if (!err) {
+                                                                console.log(enrgi);
+                                                                gameWithGirl(enrgi, ((err, enrgi) => {
+                                                                    if (!err) {
+                                                                        console.log(enrgi);
+                                                                        sleep(enrgi, ((err, enrgi) => {
+                                                                            if (!err) {
+                                                                                console.log(enrgi);
+                                                                            } else {
+                                                                                console.warn(err);
+                                                                            }
+                                                                        }))
+                                                                    } else {
+                                                                        console.warn(err);
+                                                                    }
+                                                                }))
+                                                            } else {
+                                                                console.warn(err);
+                                                            }
+                                                        }))
+                                                    } else {
+                                                        console.warn(err);
+                                                    }
+                                                }))
+                                            } else {
+                                                console.warn(err);
+                                            }
+                                        })
+                                    } else {
+                                        console.warn(err);
+                                    }
+                                })
+                            } else {
+                                console.warn(err)
+                            }
+                        })
+                    } else {
+                        console.warn(err);
+                    }
+                })
+            } else {
+                console.warn(err);
+            }
+        }));
+    } else {
+        console.warn(err);
+
+    }
+}))
