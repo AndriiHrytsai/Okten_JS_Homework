@@ -429,18 +429,71 @@
 //     }
 // }))
 
-
 //Отримати масив лише унікальних значень за допомогою reduce
 // [1, 9, 0, 1, 5, 9, 1, 6] -> [1, 9, 0, 5, 6]
-let arr = [1, 9, 0, 1, 5, 9, 1, 6];
+// let arr = [1, 9, 0, 1, 5, 9, 1, 6];
+//
+// let unic = arr.reduce((previousValue, currentValue) => {
+//     if (!previousValue.includes(currentValue)) {
+//         previousValue.push(currentValue)
+//     }
+//     return previousValue;
+// }, [])
+// console.log(unic)
 
-let unic = arr.reduce((previousValue, currentValue) => {
-    if (!previousValue.includes(currentValue)) {
-        previousValue.push(currentValue)
-    }
-    return previousValue;
-}, [])
-console.log(unic)
+//  телефонний номер
+// function createPhoneNumber(numbers){
+//     let num_format = "(***) ***-****"
+//     for (let i = 0; i < numbers.length; i++) {
+//         num_format = num_format.replace('*', numbers[i]);
+//     }
+//     return num_format;
+// }
+//
+// console.log(createPhoneNumber([1,2,3,4,5,6,7,8,9,0]))
+
+// корінь квадратний для попереднього і квадрат наступного
+// function findNextSquare(sq) {
+//     let x = Math.sqrt(sq);
+//     if (!(x % 1)) {
+//         return Math.pow(x + 1, 2);
+//     }
+//     return -1;
+// }
+//
+// console.log(findNextSquare(121));
+
+// кратне 3 і 5
+// function solution(number) {
+//     let total = 0;
+//     for (let i = 0; i < number; i++)
+//     {
+//         if (i % 3 === 0 || i % 5 === 0)
+//         {
+//             total += i;
+//         }
+//     }
+//     return total;
+// }
+//
+// console.log(solution(10))
+
+// відбір в Іт компанію
+// function openOrSenior(data) {
+//     let [year, exp] = data;
+//     if (year >= 55 && exp > 7) {
+//        return 'Senior';
+//     } else {
+//         return  'Open';
+//     }
+// }
+
+
+
+
+
+
+
 
 
 
