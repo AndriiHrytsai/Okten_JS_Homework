@@ -216,14 +216,28 @@
 // arr = arr.split('');
 //
 // function machine(arry) {
-//     for (let i = 0; i < arry.length; i++) {
-//         setTimeout(function () {
-//             console.log(arry[i]);
-//         }, Math.random() * (1000 - 100))
+//     return new Promise((resolve) => {
+//                 setTimeout(() => {
+//                     for (let i = 0; i < arry.length; i++) {
+//                         // resolve(arry[i]);
+//                         console.log(arry[i])
+//                     }
+//                 }, Math.random() * (1000 - 100));
+//
+//         }
+//     )
+// }
+//
+// async function randHello() {
+//     try {
+//         let rezOne = await machine(arr);
+//         console.log(rezOne);
+//     } catch (err) {
+//         console.log(err);
 //     }
 // }
 //
-// machine(arr);
+// randHello();
 
 //задание на асинхронность... подобно тому же заданию что и было на домашку....
 // задание называется "остаться в живых"
@@ -478,15 +492,28 @@
 //
 // console.log(solution(10))
 
-// відбір в Іт компанію
-// function openOrSenior(data) {
-//     let [year, exp] = data;
-//     if (year >= 55 && exp > 7) {
-//        return 'Senior';
-//     } else {
-//         return  'Open';
-//     }
+//CamelCases
+// String.prototype.camelCase = function () {
+//     return this.split(' ').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join('');
+//
+// };
+// console.log('andriy hrytsay tr'.camelCase());
+
+//CamelCases розділити
+// function solution(string) {
+// if(typeof string !== "string"){
+//     return '';
 // }
+// string =string.replace(/([A-Z]+)/g, ` $1`)
+// return  string;
+// }
+//
+// console.log(solution('kajsjhdAalkadnkNakasmd'));
+
+// let toWeirdCase = (s) => [...s].map((e, i) => i % 2 ? e.toLowerCase() : e.toUpperCase()).join('');
+// console.log(toWeirdCase('JuSt KiDdInG'));
+
+
 
 
 
