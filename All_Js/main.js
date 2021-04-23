@@ -166,7 +166,6 @@
 //         case 4 :
 //             console.log('Thursday');
 //             break;
-//
 //         case 5 :
 //             console.log('Friday');
 //             break;
