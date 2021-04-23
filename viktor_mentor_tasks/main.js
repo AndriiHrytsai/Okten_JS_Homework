@@ -212,32 +212,29 @@
 // l (затримка 0.7)
 // о (затримка 1)
 //
-// let arr = 'hello';
-// arr = arr.split('');
-//
-// function machine(arry) {
-//     return new Promise((resolve) => {
-//                 setTimeout(() => {
-//                     for (let i = 0; i < arry.length; i++) {
-//                         // resolve(arry[i]);
-//                         console.log(arry[i])
-//                     }
-//                 }, Math.random() * (1000 - 100));
-//
-//         }
-//     )
-// }
-//
-// async function randHello() {
-//     try {
-//         let rezOne = await machine(arr);
-//         console.log(rezOne);
-//     } catch (err) {
-//         console.log(err);
-//     }
-// }
-//
-// randHello();
+let arr = 'hello';
+arr = arr.split('');
+
+function machine(arry) {
+    return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(arry);
+            }, Math.random() * (1000 - 100));
+        }
+    )
+}
+
+async function randHello(mass) {
+    try {
+        for (let i = 0; i < mass.length; i++) {
+            let rezOne = await machine(arr[i]);
+            console.log(rezOne);
+        }
+    } catch (err) {
+        console.log(err);
+    }
+}
+randHello(arr);
 
 //задание на асинхронность... подобно тому же заданию что и было на домашку....
 // задание называется "остаться в живых"
@@ -510,9 +507,25 @@
 //
 // console.log(solution('kajsjhdAalkadnkNakasmd'));
 
-// let toWeirdCase = (s) => [...s].map((e, i) => i % 2 ? e.toLowerCase() : e.toUpperCase()).join('');
-// console.log(toWeirdCase('JuSt KiDdInG'));
-
+// перші букви слова з великої
+// let toWeirdCase = (s) => {
+//     let arr = [];
+//     s = s.split(' ');
+//     console.log(s);
+//     for (let i = 0; i < s.length; i++) {
+//         let str = '';
+//         for (let j = 0; j < s[i].length; j++) {
+//             if (j % 2 === 0) {
+//                 str += s[i].charAt(j).toUpperCase();
+//             } else {
+//                 str += s[i].charAt(j).toLowerCase();
+//             }
+//         }
+//         arr.push(str);
+//     }
+//     return arr.join(' ');
+// }
+// console.log(toWeirdCase('ana robot'));
 
 
 
