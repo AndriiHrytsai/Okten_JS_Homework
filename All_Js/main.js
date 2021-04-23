@@ -194,7 +194,8 @@
 //     for (let i = 0; i < arry.length; i++) {
 //         newArr.push(parseInt(arry[i]));
 //     }
-//   newArr = newArr.sort();
+//   newArr = newArr.sort((a, b) => a - b);
+//     console.log(newArr);
 //     minMax.push(newArr.shift());
 //     minMax.push(newArr.pop());
 // return minMax;
