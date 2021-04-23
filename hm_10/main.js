@@ -26,10 +26,10 @@ function user(age, email, _password) {
         let enterYourPass = prompt('Підтвердіть старий пароль');
         if (enterYourEmail === email && enterYourPass === _password) {
             newPassword = prompt('Enter new password : ');
-            if (newPassword.length > 8 && newPassword.includes('#')) {
+            if (newPassword.length > 8 && newPassword.includes('*')) {
                 _password = newPassword;
                 console.log('Зміна паролю успішна ' + _password);
-            }else {
+            } else {
                 console.warn('Довжина паролю має бути більша за 8 та містити спецсимвол # ')
             }
 
@@ -44,6 +44,7 @@ function user(age, email, _password) {
     }
 }
 
-const newUser = user(20, 'andriy', '1111');
+const newUser = user(20, 'vika09', '4357');
 newUser.setAge(+prompt('Enter new age : '));
+newUser.setPassword();
 newUser.setPassword();
