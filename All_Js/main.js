@@ -1,6 +1,7 @@
 //*************** Методи масивів *************************************8
 
 //concat
+
 //Даны два массива: ['a', 'b', 'c'] и [1, 2, 3]. Объедините их вместе.
 //
 // let arr = ['a', 'b', 'c'];
@@ -9,6 +10,7 @@
 // console.log(b);
 
 //push
+
 //Дан массив ['a', 'b', 'c']. Добавьте ему в конец элементы 1, 2, 3.
 //
 // let arr = ['a', 'b', 'c'];
@@ -182,10 +184,9 @@
 //
 // dayOfWeek(4);
 
+// найбільше і найменше число зі строки
+
 //highAndLow("4 5000 29 54 4 60 -214 700"). є функція вивести найбільше і найменше число
-
-// let  highAndLow = "4 5000 29 54 4 60 -214 700" ;
-
 // let highAndLow = (arry) => {
 //     let newArr = [];
 //     let minMax = [];
@@ -201,6 +202,78 @@
 // }
 // let result = highAndLow('4 5000 29 54 4 60 -214 700')
 // console.log(result);
+
+// отримання результатів через Api *** fetch()***
+
+// fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
+//     .then((value)=>{
+//         return value.json()
+//     })
+//     .then((i)=>{
+//         console.log(i)
+//     })
+
+//рекурсія
+
+//Дано натуральное число n. Выведите все числа от 1 до n.
+//
+// let i = 1;
+// let num = (n) => {
+//     console.log(i);
+//     i++;
+//     if (i <= n) {
+//         num(n);
+//     }
+// }
+// num(15);
+
+// робота з об'єктами ********** копіювання даних*******
+
+let user = {
+    name: "Andriy",
+    age: 20,
+    car: {
+        model: "lanos",
+        year: 2002
+    }
+}
+
+//  Object.assign
+// let userAndriy = Object.assign({}, user);
+// userAndriy.age = 21;
+// userAndriy.car.model = "tesla";
+// console.log(user);
+// console.log(userAndriy);
+
+// переприсвоєння ( поганий варіант бо міняється всюди значення ---- мутація)
+// let newUserAndriy = user;
+// newUserAndriy.age = 22;
+// console.log(user)
+// console.log(newUserAndriy);
+
+// копіювання через Json
+// let ostap = JSON.parse(JSON.stringify(user));
+// ostap.name = 'Ostap';
+// ostap.car.year = 2007;
+// ostap.skil = 'student';
+// console.log(user);
+// console.log(ostap);
+
+// Object.create() створюємо нового юзера і додаємо дані вручну в іншиого
+// let userTwo = Object.create(user);
+// userTwo.name = user.name;
+// userTwo.age = user.age;
+// console.log(user);
+// console.log(userTwo);
+
+// Spread іншими словами диструктуризація
+let newUserNew = {...user}; // копіюємо юзера дані в іншиу змінну
+newUserNew.name = 'Ivan';
+newUserNew.surname = 'Kalnytskyi';
+newUserNew.car.model = "mercedes"
+console.log(user)
+console.log(newUserNew)
+
 
 
 
