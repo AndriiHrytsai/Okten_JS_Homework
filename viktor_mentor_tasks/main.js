@@ -211,30 +211,38 @@
 // l (затримка 0.3)
 // l (затримка 0.7)
 // о (затримка 1)
+//******************************** Мій варіант ********************************
+// let arr = 'hello';
+// const machine = (arry) => {
+//     return new Promise((resolve) => {
+//             setTimeout(() => {
+//                 resolve(arry);
+//             }, Math.random() * (1000 - 100));
+//         }
+//     )
+// }
 //
-let arr = 'hello';
-arr = arr.split('');
-
-function machine(arry) {
-    return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(arry);
-            }, Math.random() * (1000 - 100));
-        }
-    )
-}
-
-async function randHello(mass) {
-    try {
-        for (let i = 0; i < mass.length; i++) {
-            let rezOne = await machine(arr[i]);
-            console.log(rezOne);
-        }
-    } catch (err) {
-        console.log(err);
-    }
-}
-randHello(arr);
+// async function randHello(mass) {
+//     try {
+//         for (let i = 0; i < mass.length; i++) {
+//             let rezOne = await machine(arr[i]);
+//             console.log(rezOne);
+//         }
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+//
+// randHello(arr);
+//********************************** Ментора *********************************
+// const printCh = (ch) => new Promise(resolve => setTimeout(() => resolve(ch), Math.random() * 1000))
+//
+// const typeWriter = async (str) => {
+//     for (let ch of str) {
+//         console.log(await printCh(ch));
+//     }
+// }
+// typeWriter('Hello world')
 
 //задание на асинхронность... подобно тому же заданию что и было на домашку....
 // задание называется "остаться в живых"
