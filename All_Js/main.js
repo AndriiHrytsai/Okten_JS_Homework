@@ -205,13 +205,13 @@
 
 // отримання результатів через Api *** fetch()***
 
-// fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
-//     .then((value)=>{
-//         return value.json()
-//     })
-//     .then((i)=>{
-//         console.log(i)
-//     })
+fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
+    .then((value)=>{
+        return value.json()
+    })
+    .then((i)=>{
+        console.log(i)
+    })
 
 //рекурсія
 
@@ -273,6 +273,19 @@ newUserNew.surname = 'Kalnytskyi';
 newUserNew.car.model = "mercedes"
 console.log(user)
 console.log(newUserNew)
+
+
+// камера і аудіо на сторінці
+// const video = document.getElementById('videoWebCam');
+// navigator.mediaDevices
+//   .getUserMedia({ video: true, audio: true })
+//   .then(videoStreat => {
+//     console.log(videoStreat);
+//
+//     video.srcObject = videoStreat;
+//
+//     video.play()
+//   });
 
 
 
