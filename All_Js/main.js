@@ -420,53 +420,75 @@
 // console.log(engineSeriesName);
 
 // - взять слдующий массив
-// const usersWithAddress = [
-//    {id: 9, name: 'vasya', age: 31, isMarried: false, address: {city: 'Kyiv', street: 'Gongadze', number: 16}},
-//    {id: 2, name: 'petya', age: 30, isMarried: true, address: {city: 'Rivne', street: 'Zelena', number: 1}},
-//    {id: 4, name: 'kolya', age: 29, isMarried: true, address: {city: 'Lviv', street: 'Pasichna', number: 121}},
-//    {id: 3, name: 'olya', age: 28, isMarried: false, address: {city: 'Rivne', street: 'Shevchenko', number: 90}},
-//    {id: 8, name: 'max', age: 30, isMarried: true, address: {city: 'Lviv', street: 'Kriva Lipa', number: 115}},
-//    {id: 6, name: 'anya', age: 31, isMarried: false, address: {city: 'Lviv', street: 'Shevchenko', number: 2}},
-//    {id: 10, name: 'oleg', age: 28, isMarried: false, address: {city: 'Kyiv', street: 'Centralna', number: 22}},
-//    {id: 5, name: 'andrey', age: 29, isMarried: true, address: {city: 'Lviv', street: 'Gorodotska', number: 43}},
-//    {id: 1, name: 'masha', age: 30, isMarried: true, address: {city: 'Kyiv', street: 'Peremogi', number: 12}},
-//    {id: 7, name: 'olya', age: 31, isMarried: false, address: {city: 'Lviv', street: 'Naukova', number: 16}},
-//    {id: 11, name: 'max', age: 31, isMarried: true, address: {city: 'Rivne', street: 'Ivana Franka', number: 121}}
-// ];
-//
+const usersWithAddress = [
+    {id: 9, name: 'vasya', age: 31, isMarried: false, address: {city: 'Kyiv', street: 'Gongadze', number: 16}},
+    {id: 2, name: 'petya', age: 30, isMarried: true, address: {city: 'Rivne', street: 'Zelena', number: 1}},
+    {id: 4, name: 'kolya', age: 29, isMarried: true, address: {city: 'Lviv', street: 'Pasichna', number: 121}},
+    {id: 3, name: 'olya', age: 28, isMarried: false, address: {city: 'Rivne', street: 'Shevchenko', number: 90}},
+    {id: 8, name: 'max', age: 30, isMarried: true, address: {city: 'Lviv', street: 'Kriva Lipa', number: 115}},
+    {id: 6, name: 'anya', age: 31, isMarried: false, address: {city: 'Lviv', street: 'Shevchenko', number: 2}},
+    {id: 10, name: 'oleg', age: 28, isMarried: false, address: {city: 'Kyiv', street: 'Centralna', number: 22}},
+    {id: 5, name: 'andrey', age: 29, isMarried: true, address: {city: 'Lviv', street: 'Gorodotska', number: 43}},
+    {id: 1, name: 'masha', age: 30, isMarried: true, address: {city: 'Kyiv', street: 'Peremogi', number: 12}},
+    {id: 7, name: 'olya', age: 31, isMarried: false, address: {city: 'Lviv', street: 'Naukova', number: 16}},
+    {id: 11, name: 'max', age: 31, isMarried: true, address: {city: 'Rivne', street: 'Ivana Franka', number: 121}}
+];
+
 // -- Відсортувати їх по ID
+// usersWithAddress.sort((a, b) => a.id - b.id);
+// console.log(usersWithAddress);
 // -- Відсортувати їх по ID в зворотньому порядку
-// -- Відсортувати по віку
-// -- Відсортувати по віку в зворотньому порядку
+// usersWithAddress.sort((a, b) => b.id - a.id);
+// console.log(usersWithAddress);
 // -- Відсорутвати по імені
+// usersWithAddress.sort((a, b) => {
+//     if (a.name > b.name) {
+//         return 1;
+//     }
+//     return -1;
+// });
+// console.log(usersWithAddress)
 // -- Відсорутвати по назві вулиці
+// usersWithAddress.sort((a, b) => {
+//     if (a.address.street > b.address.street) {
+//         return 1;
+//     }
+//     return -1;
+// });
+// console.log(usersWithAddress)
+
 // -- Відсорутвати по номеру будинку
+// usersWithAddress.sort((a, b) => {
+//     if (a.address.number > b.address.number) {
+//         return 1;
+//     }
+//     return -1;
+// })
+// console.log(usersWithAddress);
+
 // -- Залигити тільки тих, хто молодший ніж 30 (filter)
-// -- Залишити тільки одружених
-// -- Залишити тільки одружених, які молодні за 30
+// let yungPeople = usersWithAddress.filter(value => value.age < 30);
+// console.log(yungPeople);
 // -- Залишити лише тих, в кого парні номери будинків.
+// let numHouse = usersWithAddress.filter(value =>  !(value.address.number % 2));
+// console.log(numHouse)
 // -- Порахувати загальний вік всіх людей. (reduce)
+// let allAge = usersWithAddress.reduce((previousValue, currentValue) =>{
+//     return  previousValue + currentValue.age
+// },0 );
+// console.log(allAge)
+
 // -- Ті, хто одружений і старий за 30 має отримати обєкти child і попасти в новий масив (reduce)
-//
-//
-// ______________________________________________________________________________________________________________________________________________________
-//                                                                     Додатково
-// ______________________________________________________________________________________________________________________________________________________
-//
-// Створити обєкт автомобіля з полями:
-// Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
-// Власник автомобіля теж має бути обєкт, у якого є поля
-// Імя, вік, стаж водіння.
-// Створити не менше 7 та не більше 20 машинок.
-// Для початку вкладіть всі наші створені автомобілі в масив cars.
-// Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
-// На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
-// Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
-// Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25,
-// то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
-// Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
-//
-//
+// let marriedOldPeople = usersWithAddress.reduce((arr, currentValue) => {
+//     if (currentValue.isMarried && currentValue.age >= 30) {
+//         currentValue.child = true;
+//         arr.push(currentValue);
+//     }
+//     return arr;
+// }, [])
+// console.log(marriedOldPeople)
+
+
 // Задача: дан отсортированный по возрастанию массив целых чисел.
 // Необходимо вернуть наименьший и наибольший индекс заданного элемента.
 // Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
@@ -479,5 +501,15 @@
 // 2. Key = 4
 // Answer: MinIndex = 3, MaxIndex = 6.
 
+let arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14];
 
+let minMaxValue = (arry, num) => {
+    const min = arry.indexOf(num);
+    if(!min){
+        return  -1;
+    }
+    const max = arry.lastIndexOf(num);
+    return {min, max}
+}
+console.log(minMaxValue( arr, 4));
 
