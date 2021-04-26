@@ -291,65 +291,100 @@
 
 //1) Створити масив з 5 чисел та:
 //  a) відсортувати його від меншого до більшого.
-let arr = [2, 6, 1, 9, 3];
-arr.sort((a, b) => a - b);
-console.log(arr);
+// let arr = [2, 6, 1, 9, 3];
+// arr.sort((a, b) => a - b);
+// console.log(arr);
 //  b) відсортувати його від більшого до меншого.
-let arr2 = [2, 6, 1, 9, 3];
-arr2.sort((a, b) => b - a);
-console.log(arr2);
+// let arr2 = [2, 6, 1, 9, 3];
+// arr2.sort((a, b) => b - a);
+// console.log(arr2);
 //  c) Відфілтрувати числа які є кратними 3.
-let arr3 = [2, 6, 1, 9, 3];
-let rez = arr3.filter(value => !(value % 3));
-console.log(rez);
+// let arr3 = [2, 6, 1, 9, 3];
+// let rez = arr3.filter(value => !(value % 3));
+// console.log(rez);
 //  d) Відфілтрувати числа які є більшими за 10.
-let arr4 = [20, 6, 12, 9, 11];
-let filter = arr4.filter(value => value > 10);
-console.log(filter)
-//  e) Проітерувати його forEach та вивести кожеш елмент за допомогою document.write
-let arr5 = [20, 6, 12, 9, 11];
-arr5.forEach(value => document.write(value + " "));
-//  f) За допомогою map збільшити кожен елемент в масиві в три рази.
-let arr6 = [20, 6, 12, 9, 11];
-let mapXthree = arr6.map(value => value*3);
-console.log(mapXthree);
-//  g) Порахувати загальну суму всіх елментів у масиві (reduce)
-let arr7 = [20, 6, 12, 9, 1];
-let sum = arr7.reduce((previousValue, currentValue) => previousValue + currentValue);
-console.log(sum);
-// 2) Створити масив з 20 стрічок та:
-//  a) Відсортувати його в алфавітному порядку
-//  b) Відсортувати в зворотньому порядку
-//  c) Отримати в новому масиві тільки ті слова, довжина яких більша за 4 букви (filter)
-//  d) Змінити кожне слово в масиві додавши на початок 'Sam says *ваше слово*'
+// let arr4 = [20, 6, 12, 9, 11];
+// let filter = arr4.filter(value => value > 10);
+// console.log(filter)
+// //  e) Проітерувати його forEach та вивести кожеш елмент за допомогою document.write
+// let arr5 = [20, 6, 12, 9, 11];
+// arr5.forEach(value => document.write(value + " "));
+// //  f) За допомогою map збільшити кожен елемент в масиві в три рази.
+// let arr6 = [20, 6, 12, 9, 11];
+// let mapXthree = arr6.map(value => value*3);
+// console.log(mapXthree);
+// //  g) Порахувати загальну суму всіх елментів у масиві (reduce)
+// let arr7 = [20, 6, 12, 9, 1];
+// let sum = arr7.reduce((previousValue, currentValue) => previousValue + currentValue);
+// console.log(sum);
 //
+
+// 2) Створити масив з 5 стрічок та:
+//  a) Відсортувати його в алфавітному порядку
+// let str = ['ara', 'log', 'js', 'css', 'html'];
+// str.sort((a, b) => {
+//     if (a > b) {
+//         return 1
+//     }
+//     return -1;
+// });
+// console.log(str);
+//  b) Відсортувати в зворотньому порядку
+// let str2 = ['ara', 'log', 'js', 'css', 'html'];
+// str2.sort((a, b) => {
+//     if (a < b) {
+//         return 1
+//     }
+//     return -1;
+// });
+// console.log(str2);
+//  c) Отримати в новому масиві тільки ті слова, довжина яких більша за 4 букви (filter)
+// let str3 = ['araHrytsay', 'loger', 'js', 'css', 'html'];
+// let filter = str3.filter(value => value.length > 4);
+// console.log(filter);
+//  d) Змінити кожне слово в масиві додавши на початок 'Sam says *ваше слово*'
+// let str4 = ['araHrytsay', 'loger', 'js', 'css', 'html'];
+// let newFirstWord = str4.map(value => `Sam says ${value}`);
+// console.log(newFirstWord);
+
 // 3) Все робити тільки за допомогою методів масивів!
 // Дано масив :
 // const users = [
-//    {name: 'vasya', age: 31, isMarried: false},
-//    {name: 'petya', age: 30, isMarried: true},
-//    {name: 'kolya', age: 29, isMarried: true},
-//    {name: 'olya', age: 28, isMarried: false},
-//    {name: 'max', age: 30, isMarried: true},
-//    {name: 'anya', age: 31, isMarried: false},
-//    {name: 'oleg', age: 28, isMarried: false},
-//    {name: 'andrey', age: 29, isMarried: true},
-//    {name: 'masha', age: 30, isMarried: true},
-//    {name: 'olya', age: 31, isMarried: false},
-//    {name: 'max', age: 31, isMarried: true}
+//     {name: 'vasya', age: 31, isMarried: false},
+//     {name: 'petya', age: 30, isMarried: true},
+//     {name: 'kolya', age: 29, isMarried: true},
+//     {name: 'olya', age: 28, isMarried: false},
+//     {name: 'max', age: 30, isMarried: true},
+//     {name: 'anya', age: 31, isMarried: false},
+//     {name: 'oleg', age: 28, isMarried: false},
+//     {name: 'andrey', age: 29, isMarried: true},
+//     {name: 'masha', age: 30, isMarried: true},
+//     {name: 'olya', age: 31, isMarried: false},
+//     {name: 'max', age: 31, isMarried: true}
 // ];
 // a) відсортувати його за  віком (зростання , а потім окремо спадання)
+// users.sort((a,b) => a.age - b.age);
+// console.log(users);
+
 // b) відсортувати його за кількістю знаків в імені  (зростання , а потім окремо спадання)
-// c) пройтись по ньому та додати кожному юзеру поле id - яке характеризує унікальний індентифікатор (По якому принципу його створювати - ваше рішення),
-//    та зберегти це в новий масив (первинний масив залишиться без змін)
-// d) відсортувати його за індентифікатором
+// users.sort((a, b) => {
+//     if (a.name > b.name) {
+//         return 1;
+//     }
+//     return -1;
+// });
+// console.log(users)
+
 // e) Всі хто одружений мають попасти у новий масив та отрмати квартиру (reduce)
-//
-// ______________________________________________________________________________________________________________________________________________________
-//                                                                 РОБОТА В АУДИТОРІЇ
-// ______________________________________________________________________________________________________________________________________________________
-//
-//
+// let married = users.reduce((previousValue, currentValue) => {
+//     if(currentValue.isMarried){
+//         currentValue.house = true;
+//     previousValue.push(currentValue);
+//     }
+// return previousValue;
+// },[]);
+// console.log(married);
+
 // const cars = [
 //    {producer:"subaru",model: "wrx",year: 2010, color:"blue",type: "sedan",engine: "ej204x",volume: 2,power: 400},
 //    {producer:"subaru",model: "legacy",year: 2007, color:"silver",type: "sedan",engine: "ez30",volume: 3,power: 250},
@@ -380,7 +415,8 @@ console.log(sum);
 // - двигун більше 2л + сили більше 250
 // - сили більше 250  + виробник бмв
 //
-//
+
+
 // - взять слдующий массив
 // const usersWithAddress = [
 //    {id: 9, name: 'vasya', age: 31, isMarried: false, address: {city: 'Kyiv', street: 'Gongadze', number: 16}},
