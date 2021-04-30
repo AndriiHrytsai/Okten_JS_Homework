@@ -501,15 +501,32 @@ const usersWithAddress = [
 // 2. Key = 4
 // Answer: MinIndex = 3, MaxIndex = 6.
 
-let arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14];
+// let arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14];
+//
+// let minMaxValue = (arry, num) => {
+//     const min = arry.indexOf(num);
+//     if(!min){
+//         return  -1;
+//     }
+//     const max = arry.lastIndexOf(num);
+//     return {min, max}
+// }
+// console.log(minMaxValue( arr, 4));
 
-let minMaxValue = (arry, num) => {
-    const min = arry.indexOf(num);
-    if(!min){
-        return  -1;
-    }
-    const max = arry.lastIndexOf(num);
-    return {min, max}
-}
-console.log(minMaxValue( arr, 4));
+// Написати фкнкцію яка приймає рандомне число і масив чисел.
+// Необхідно додати до масиву це число і повернути результуючий масив
+//
+// Example
+// arr = [1,6,9]
+// number = 1
+// result = [1,7,0]
+
+// let rez = (number, arr) => {
+//     return (+arr.join('') + number).toString().split('');
+// }
+// console.log(rez(2, [1, 4, 5, 1]));
+
+
+
+
 
